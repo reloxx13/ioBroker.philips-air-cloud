@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "philips-air-cloud",
-    "version": "2.5.2",
+    "version": "2.5.3",
     "news": {
+      "2.5.3": {
+        "en": "Corrected the Cloud device folder and roles for the device start time and reported fan speed.\nEncoded unexpected local device attributes as single state ID segments.",
+        "de": "Cloud-Geräteordner und Rollen für Startzeit und Lüfterzahl korrigiert.\nKodierte unerwartete lokale Geräteattribute als Status-ID-Segmente.",
+        "ru": "Исправлены папка облачных устройств и роли для времени запуска устройства и сообщаемой скорости вращения вентилятора.\nНеожиданные атрибуты локального устройства закодированы в виде отдельных сегментов идентификатора состояния.",
+        "pt": "Corrigiu a pasta e as funções do Cloud, a hora de início e a velocidade relatada do ventilador.\nCodificou atributos locais inesperados como um único ID de estado.",
+        "nl": "De map en rollen van het Cloud-apparaat gecorrigeerd voor de starttijd van het apparaat en de gerapporteerde ventilatorsnelheid.\nOnverwachte kenmerken van lokale apparaten gecodeerd als segmenten voor individuele staats-ID's.",
+        "fr": "Le dossier et les rôles des appareils Cloud ont été corrigés pour l'heure de démarrage et la vitesse du ventilateur.\nAttributs locaux inattendus codés sous forme de segments d'identification uniques.",
+        "it": "Corretti la cartella e i ruoli del Cloud Device per l'avvio e la velocità della ventola.\nAttributi locali imprevisti codificati come ID a stato singolo.",
+        "es": "Se corrigieron la carpeta y las funciones del dispositivo en la nube según la hora de inicio y la velocidad del ventilador.\nCodificó atributos inesperados del dispositivo local como un solo ID estatal.",
+        "pl": "Poprawiono folder urządzeń w chmurze i role dla czasu rozpoczęcia urządzenia i zgłoszonej prędkości wentylatora.\nZakodowano nieoczekiwane atrybuty urządzeń lokalnych jako segmenty identyfikatora pojedynczego stanu.",
+        "uk": "Виправлено папку хмарного пристрою та ролі для часу запуску пристрою та повідомленої швидкості вентилятора.\nЗакодовані несподівані атрибути локального пристрою як сегменти ідентифікатора одного стану.",
+        "zh-cn": "更正了设备启动时间和报告的风扇速度的 Cloud 设备文件夹和角色。\n将意外的本地设备属性编码为单一状态 ID 段。"
+      },
       "2.5.2": {
         "en": "New instances default to Philips Cloud.\nFixed a verification button that could keep loading after successful sign-in.",
         "de": "Neue Instanzen sind Standard Philips Cloud.\nEin Bestätigungsbutton wurde behoben, der auch nach Anmeldung geladen wurde.",

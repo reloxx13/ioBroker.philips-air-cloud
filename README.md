@@ -117,8 +117,7 @@ therefore exposes its timer values read-only. CX7550 timer control is supported.
 Further setup instructions and technical references: [Documentation](docs/README.md).
 
 ## Changelog
-
-### **WORK IN PROGRESS**
+### 2.5.3 (2026-11-24)
 - (reloxx13) Corrected the Cloud device folder and roles for the device start time and reported fan speed.
 - (reloxx13) Encoded unexpected local device attributes as single state ID segments.
 
