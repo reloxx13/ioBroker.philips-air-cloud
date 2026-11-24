@@ -1,12 +1,12 @@
 {
-  "name": "iobroker.philips-air",
+  "name": "iobroker.philips-air-cloud",
   "version": "2.4.1",
   "description": "Connects Philips air purifier with ioBroker",
   "author": "bdeluefox <dogafox@gmail.com>",
   "contributors": [
     "iobroker-community-adapters <iobroker-community-adapters@gmx.de>"
   ],
-  "homepage": "https://github.com/iobroker-community-adapters/ioBroker.philips-air",
+  "homepage": "https://github.com/reloxx13/ioBroker.philips-air-cloud",
   "license": "MIT",
   "keywords": [
     "ioBroker",
@@ -15,7 +15,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/iobroker-community-adapters/ioBroker.philips-air"
+    "url": "https://github.com/reloxx13/ioBroker.philips-air-cloud"
   },
   "engines": {
     "node": ">=22.19.0"
@@ -58,7 +58,7 @@
     "dev": "dev-server upload && dev-server watch"
   },
   "bugs": {
-    "url": "https://github.com/iobroker-community-adapters/ioBroker.philips-air/issues"
+    "url": "https://github.com/reloxx13/ioBroker.philips-air-cloud/issues"
   },
   "readmeFilename": "README.md"
 }

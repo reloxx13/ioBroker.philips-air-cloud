@@ -1,17 +1,12 @@
 ![Logo](admin/philips-air.png)
-# ioBroker.philips-air
+# ioBroker.philips-air-cloud
 
-![Number of Installations](http://iobroker.live/badges/philips-air-installed.svg)
-![Number of Installations](http://iobroker.live/badges/philips-air-stable.svg)
-[![NPM version](http://img.shields.io/npm/v/iobroker.philips-air.svg)](https://www.npmjs.com/package/iobroker.philips-air)
+[![Test and Release](https://github.com/reloxx13/ioBroker.philips-air-cloud/actions/workflows/test-and-release.yml/badge.svg)](https://github.com/reloxx13/ioBroker.philips-air-cloud/actions/workflows/test-and-release.yml)
 
-![Test and Release](https://github.com/iobroker-community-adapters/ioBroker.philips-air/workflows/Test%20and%20Release/badge.svg)
-[![Translation status](https://weblate.iobroker.net/widgets/adapters/-/philips-air/svg-badge.svg)](https://weblate.iobroker.net/engage/adapters/?utm_source=widget)
-[![Downloads](https://img.shields.io/npm/dm/iobroker.philips-air.svg)](https://www.npmjs.com/package/iobroker.philips-air)
+Fork of [ioBroker.philips-air](https://github.com/iobroker-community-adapters/ioBroker.philips-air).
 
-**This adapter uses Sentry libraries to automatically report exceptions and code errors to the developers.** For more details and for information how to disable the error reporting see [Sentry-Plugin Documentation](https://github.com/ioBroker/plugin-sentry#plugin-sentry)! Sentry reporting is used starting with js-controller 3.0.
+This fork uses the adapter ID `philips-air-cloud`. Its instances use their own namespace, for example `philips-air-cloud.0`. Existing `philips-air` instances and their settings are separate.
 
-## Philips air purifier adapter for ioBroker
 Connects Philips air purifiers and selected Philips/Versuni fans with ioBroker.
 **Tested with AC2729 and the Philips/Versuni fans CX3550/01 and CX7550/01**, but should work with newer purifiers that communicate via local CoAP with encryption.
 ![AC2729](img/device.png)

@@ -1,6 +1,6 @@
 {
   "common": {
-    "name": "philips-air",
+    "name": "philips-air-cloud",
     "version": "2.4.1",
     "news": {
       "2.4.1": {
@@ -96,17 +96,17 @@
       }
     },
     "titleLang": {
-      "en": "Philips air purifier",
-      "de": "Philips Luftreiniger",
-      "ru": "Очиститель воздуха Philips",
-      "pt": "Purificador de ar Philips",
-      "nl": "Philips luchtreiniger",
-      "fr": "Purificateur d'air Philips",
-      "it": "Purificatore d'aria Philips",
-      "es": "Purificador de aire Philips",
-      "pl": "Oczyszczacz powietrza firmy Philips",
-      "zh-cn": "飞利浦空气净化器",
-      "uk": "Очищувач повітря Philips"
+      "en": "Philips Air Cloud",
+      "de": "Philips Air Cloud",
+      "ru": "Philips Air Cloud",
+      "pt": "Philips Air Cloud",
+      "nl": "Philips Air Cloud",
+      "fr": "Philips Air Cloud",
+      "it": "Philips Air Cloud",
+      "es": "Philips Air Cloud",
+      "pl": "Philips Air Cloud",
+      "zh-cn": "Philips Air Cloud",
+      "uk": "Philips Air Cloud"
     },
     "desc": {
       "en": "Connects Philips air purifier with ioBroker",
@@ -136,8 +136,8 @@
     "platform": "Javascript/Node.js",
     "icon": "philips-air.png",
     "enabled": true,
-    "extIcon": "https://raw.githubusercontent.com/iobroker-community-adapters/ioBroker.philips-air/master/admin/philips-air.png",
-    "readme": "https://github.com/iobroker-community-adapters/ioBroker.philips-air/blob/master/README.md",
+    "extIcon": "https://raw.githubusercontent.com/reloxx13/ioBroker.philips-air-cloud/master/admin/philips-air.png",
+    "readme": "https://github.com/reloxx13/ioBroker.philips-air-cloud/blob/master/README.md",
     "loglevel": "info",
     "mode": "daemon",
     "type": "household",
@@ -158,11 +158,6 @@
         "admin": ">=7.7.22"
       }
     ],
-    "plugins": {
-      "sentry": {
-        "dsn": "https://69439afbafc848aeb6680c294ea14093@sentry.iobroker.net/178"
-      }
-    },
     "messages": [
       {
         "condition": {
@@ -198,7 +193,7 @@
           "uk": "Починаючи з версії 2.0.0 адаптер керується новим налаштуванням \"Модель пристрою\". Після оновлення воно має значення \"Generic\" і показує лише значення для читання - виберіть один раз модель пристрою в налаштуваннях екземпляра, щоб отримати елементи керування вашого пристрою. Крім того: усі точки даних, ідентифікатор яких починався з \"cx\", тепер мають загальні назви, наприклад fanMode замість cxFanMode. Скрипти, візуалізації та графіки, що посилаються на старі ідентифікатори, потрібно змінити; старі об'єкти cx* залишаються і можуть бути видалені вручну. У файлі README наведено список, яку модель вибрати для якого пристрою.",
           "zh-cn": "从 2.0.0 版本起，适配器依据新的“设备型号”设置运行。更新后该设置为“Generic”，仅显示只读数值 —— 请在实例设置中选择一次您的设备型号，以获得设备的控制项。此外：所有以“cx”开头的数据点 ID 现在改为通用名称，例如 fanMode 代替 cxFanMode。指向旧 ID 的脚本、可视化和图表需要相应调整；旧的 cx* 对象仍会保留，可以手动删除。 README 中列有各设备应选择哪个型号的对照表。"
         },
-        "link": "https://github.com/iobroker-community-adapters/ioBroker.philips-air#which-device-model-should-i-select",
+        "link": "https://github.com/reloxx13/ioBroker.philips-air-cloud#which-device-model-should-i-select",
         "linkText": {
           "en": "Which device model should I select?",
           "de": "Welches Gerätemodell soll ich auswählen?",
