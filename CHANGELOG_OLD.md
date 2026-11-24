@@ -1,4 +1,34 @@
 # Older changes
+
+## 2.4.1 (2026-11-17)
+- (tt-tom17) AC2889 family: the child lock is now written as a boolean, the format the classic devices expect - an AC4236/14 ignored the command before (GitHub #411)
+
+## 2.4.0 (2026-11-06)
+- (tt-tom17) New device model "AC3737" for the AC3737/10 2-in-1 purifier/humidifier: readings, all three filter pairs, the humidity target, the water tank state, the "no water" error and the preferred index are now named instead of appearing as raw values; writing the mode and the humidity target is confirmed on the device
+- (copilot) Adapter requires node.js >= 22.19.0 now
+
+
+## 2.3.0 (2026-10-26)
+
+- (tt-tom17) A new instance now starts with the device model "Generic" (read-only values, no controls) instead of silently using the AC2889 controls; instances that already have a model keep it
+- (tt-tom17) With the device model "Generic" the log now names the model your device looks like, so you know which one to select
+- (tt-tom17) Dependencies updated
+
+## 2.2.0 (2026-09-08)
+
+- (tt-tom17) Added the combined allergen/sleep preset ("Allergie-/Ruhemodus") reported by the AC4236/14 (VMI1)
+- (tt-tom17) Classic devices now show the total filter life next to the remaining hours, plus the device language and version (VMI1)
+- (tt-tom17) The "wrong device model" warning is no longer silenced by a single register that both models use (VMI1)
+- (tt-tom17) Fixed a device attribute spelled like one of the adapter's own state names being treated as a mapped value (VMI1)
+
+## 2.1.0 (2026-08-29)
+
+- (tt-tom17) Fixed error messages ("DB closed", "setTimeout called, but adapter is shutting down") that appeared in the log every time the adapter was stopped or restarted (MatthiasBosch)
+- (tt-tom17) New setting "Log unknown device attributes as debug": moves the "Unknown raw device attribute" messages from the info log to the debug log (off by default)
+- (tt-tom17) Fixed devices connected via CoAP reconnecting every few minutes, and the log filling with "connection lost / connected" pairs, although the connection was fine - this affected quiet devices such as the CX7550/01 (DrBakterius)
+- (tt-tom17) A device that stays unreachable is now retried at growing intervals instead of every 30 seconds, and stops repeating the same error line in the log
+- (tt-tom17) No longer suggests switching to CoAP when an HTTP device that was working loses its connection - the hint now only appears while HTTP has never worked (tukey42)
+
 ## 2.0.0 (2026-08-23)
 
 - (tt-tom17) New "Device model" setting: pick your model so the adapter shows the correct controls for your device
