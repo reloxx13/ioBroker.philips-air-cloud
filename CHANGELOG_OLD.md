@@ -1,4 +1,16 @@
 # Older changes
+## 2.0.0 (2026-08-23)
+
+- (tt-tom17) New "Device model" setting: pick your model so the adapter shows the correct controls for your device
+- (tt-tom17) Added support for the AC3221 next-generation purifier (MatthiasBosch)
+- (tt-tom17) Added support for the CX7550/01 tower fan (DrBakterius)
+- (tt-tom17) The adapter now warns in the log when the selected model does not seem to match the connected device
+- (tt-tom17) Values the adapter does not recognise are collected under "unknownStates"
+- (tt-tom17) IMPORTANT: all state IDs starting with "cx" were renamed to generic names (for example "fanMode" instead of "cxFanMode"). Please select your device model once in the settings; the old "cx*" objects can be deleted manually
+- (tt-tom17) Fixed switches that did nothing when a script or visualisation wrote them as the text "true"/"false" instead of a real on/off value
+- (tt-tom17) Fixed devices connected via HTTP logging "Cannot parse: undefined" every time a command was sent; the device answer is now read correctly
+- (tt-tom17) Fixed devices using the HTTP protocol (for example the AC3829 and AC2729) that stopped connecting in version 1.4.0 and only logged "fetch failed (UND_ERR_SOCKET)"; requests are sent the way these devices expect again
+
 ## 1.6.1 (2026-07-03)
 - (Holly86) Added support for Philips/Versuni CX3550/01 pedestal fan.
 - (Holly86) Added CX fan modes, oscillation, beep and read-only timer state.

@@ -117,7 +117,7 @@ therefore exposes its timer values read-only. CX7550 timer control is supported.
 Further setup instructions and technical references: [Documentation](docs/README.md).
 
 ## Changelog
-### **WORK IN PROGRESS**
+### 2.5.1 (2026-11-24)
 - (reloxx13) New instances default to Philips Cloud.
 - (reloxx13) Fixed a verification button that could keep loading after successful sign-in.
 
@@ -155,18 +155,6 @@ Further setup instructions and technical references: [Documentation](docs/README
 - (tt-tom17) Fixed devices connected via CoAP reconnecting every few minutes, and the log filling with "connection lost / connected" pairs, although the connection was fine - this affected quiet devices such as the CX7550/01 (DrBakterius)
 - (tt-tom17) A device that stays unreachable is now retried at growing intervals instead of every 30 seconds, and stops repeating the same error line in the log
 - (tt-tom17) No longer suggests switching to CoAP when an HTTP device that was working loses its connection - the hint now only appears while HTTP has never worked (tukey42)
-
-### 2.0.0 (2026-08-23)
-
-- (tt-tom17) New "Device model" setting: pick your model so the adapter shows the correct controls for your device
-- (tt-tom17) Added support for the AC3221 next-generation purifier (MatthiasBosch)
-- (tt-tom17) Added support for the CX7550/01 tower fan (DrBakterius)
-- (tt-tom17) The adapter now warns in the log when the selected model does not seem to match the connected device
-- (tt-tom17) Values the adapter does not recognise are collected under "unknownStates"
-- (tt-tom17) IMPORTANT: all state IDs starting with "cx" were renamed to generic names (for example "fanMode" instead of "cxFanMode"). Please select your device model once in the settings; the old "cx*" objects can be deleted manually
-- (tt-tom17) Fixed switches that did nothing when a script or visualisation wrote them as the text "true"/"false" instead of a real on/off value
-- (tt-tom17) Fixed devices connected via HTTP logging "Cannot parse: undefined" every time a command was sent; the device answer is now read correctly
-- (tt-tom17) Fixed devices using the HTTP protocol (for example the AC3829 and AC2729) that stopped connecting in version 1.4.0 and only logged "fetch failed (UND_ERR_SOCKET)"; requests are sent the way these devices expect again
 
 [Older changelogs can be found there](CHANGELOG_OLD.md)
 
