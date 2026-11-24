@@ -117,7 +117,7 @@ therefore exposes its timer values read-only. CX7550 timer control is supported.
 Further setup instructions and technical references: [Documentation](docs/README.md).
 
 ## Changelog
-### 2.5.1 (2026-11-24)
+### **WORK IN PROGRESS**
 - (reloxx13) New instances default to Philips Cloud.
 - (reloxx13) Fixed a verification button that could keep loading after successful sign-in.
 
