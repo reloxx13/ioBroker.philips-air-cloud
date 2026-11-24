@@ -17,8 +17,7 @@ tests.integration(path.join(__dirname, '..'), {
                     },
                 });
                 assert.equal((await harness.getAdapterConfig())?.native.protocol, 'cloud');
-                // The testing harness sends its shutdown command from system.host.testing.
-                await harness.startAdapterAndWait(false, { IOB_HOSTNAME: 'testing' });
+                await harness.startAdapterAndWait();
                 // alive is set before ready finishes creating and restoring the authentication states.
                 let expiry;
                 const deadline = Date.now() + 10000;
