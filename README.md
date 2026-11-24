@@ -118,6 +118,10 @@ Further setup instructions and technical references: [Documentation](docs/README
 
 ## Changelog
 
+### **WORK IN PROGRESS**
+- (reloxx13) Corrected the Cloud device folder and roles for the device start time and reported fan speed.
+- (reloxx13) Encoded unexpected local device attributes as single state ID segments.
+
 ### 2.5.2 (2026-11-24)
 - (reloxx13) New instances default to Philips Cloud.
 - (reloxx13) Fixed a verification button that could keep loading after successful sign-in.

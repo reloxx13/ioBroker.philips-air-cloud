@@ -26,7 +26,9 @@ function harness(config) {
             writes.push({ id, val, ack });
         },
         setState() { return Promise.resolve(); },
-        async setObjectNotExistsAsync(id, object) { objects.set(id, object); },
+        async setObjectNotExistsAsync(id, object) {
+            if (!objects.has(id)) objects.set(id, object);
+        },
         async getObjectAsync(id) { return objects.get(id); },
         async extendObjectAsync(id, object) {
             const old = objects.get(id);
@@ -351,6 +353,29 @@ describe('main - cloud integration preserves local contracts', () => {
         assert.ok(roots.every(id => /^devices\.[A-Za-z0-9_-]+$/.test(id)));
         assert.ok(roots.includes('devices.a_b'));
         assert.equal(h.transports.length, 3);
+    });
+
+    it('upgrades the Cloud container in place', async () => {
+        const h = harness({ protocol: 'cloud', cloudRefreshToken: 'synthetic-refresh' });
+        h.objects.set('devices', { type: 'channel', common: { name: 'My devices' }, native: {} });
+        await h.callbacks.ready();
+        assert.equal(h.objects.get('devices').type, 'folder');
+        assert.equal(h.objects.get('devices').common.name, 'My devices');
+    });
+
+    it('keeps local attributes flat and corrects existing state roles', async () => {
+        const h = harness({ protocol: 'coap', host: 'synthetic.invalid', model: 'CX3550' });
+        h.objects.set('device.started', { type: 'state', common: { name: 'My timestamp', role: 'value.time' } });
+        h.objects.set('status.fanSpeedReported', { type: 'state', common: { role: 'value.speed' } });
+        await h.callbacks.ready();
+        h.transport().emit('status', { uptime: 1000, fanSpeedReported: 'speed1', D99999: 2, 'a.b': 3 },
+            new Set(['uptime', 'fanSpeedReported']));
+        await new Promise(resolve => setImmediate(resolve));
+        assert.equal(h.objects.get('device.started').common.role, 'date');
+        assert.equal(h.objects.get('device.started').common.name, 'My timestamp');
+        assert.equal(h.objects.get('status.fanSpeedReported').common.role, 'text');
+        assert.ok(h.writes.some(w => w.id === 'unknownStates.D99999' && w.val === 2));
+        assert.ok(h.writes.some(w => /^unknownStates\._hash_[a-f0-9]{64}$/.test(w.id) && w.val === 3));
     });
 
     it('waits for login without discovery or reconnect loops', async () => {

@@ -10,6 +10,7 @@ const {
     modelsOwningRawKey,
     resolveModel,
     bestMatchingModels,
+    objectKey,
 } = require('./lib/mapping');
 const adapterName = require('./package.json').name.split('.').pop();
 
@@ -134,6 +135,10 @@ function startAdapter(options) {
 // Device states are created on demand from the mapping (io-package.json only defines the adapter's
 // own infrastructure). Ids already ensured this run are cached so we touch the object DB only once.
 const ensuredObjects = new Set();
+const legacyDeviceRoles = new Map([
+    ['device.started', 'value.time'],
+    ['status.fanSpeedReported', 'value.speed'],
+]);
 
 /**
  * Create the state object once (from a mapping-derived common block) if it does not exist yet, then
@@ -149,6 +154,16 @@ async function setDeviceState(id, common, value) {
     }
     if (!ensuredObjects.has(id)) {
         await adapter.setObjectNotExistsAsync(id, { type: 'state', common, native: {} });
+        if (!stopping && legacyDeviceRoles.has(id)) {
+            const existing = await adapter.getObjectAsync(id);
+            if (!stopping && existing?.common.role === legacyDeviceRoles.get(id)) {
+                await adapter.extendObjectAsync(id, {
+                    type: 'state',
+                    common: { ...existing.common, role: common.role },
+                    native: {},
+                });
+            }
+        }
         ensuredObjects.add(id);
     }
     if (!stopping) {
@@ -226,7 +241,7 @@ async function updateStatus(status, renamedNames) {
             date.setMilliseconds(date.getMilliseconds() - status.uptime);
             await setDeviceState(
                 'device.started',
-                { name: 'started', type: 'string', role: 'value.time', read: true, write: false },
+                { name: 'started', type: 'string', role: 'date', read: true, write: false },
                 date.toISOString(),
             );
             continue;
@@ -297,6 +312,7 @@ async function updateUnknownStates(status, mapped) {
         if (rawKey === 'key' || mapped.has(rawKey)) {
             continue;
         }
+        const id = `unknownStates.${objectKey(rawKey)}`;
         const owners = modelsOwningRawKey(rawKey);
         for (const owner of owners) {
             foreignControlCount.set(owner, (foreignControlCount.get(owner) || 0) + 1);
@@ -307,20 +323,20 @@ async function updateUnknownStates(status, mapped) {
                 adapter.log.debug(
                     `Raw attribute "${rawKey}" (a control of ${owners.join('/')}) is not mapped for the ` +
                         `selected model "${resolveModel(adapter.config.model)}"; exposed read-only as ` +
-                        `unknownStates.${rawKey}.`,
+                        `${id}.`,
                 );
             } else {
                 // Reported at info level by default so users notice values worth adding to the adapter.
                 // Anyone who does not want that in their info log can move it to debug in the settings.
                 adapter.log[adapter.config.logUnknownStatesAsDebug ? 'debug' : 'info'](
                     `Unknown raw device attribute "${rawKey}" (value: ${JSON.stringify(status[rawKey])}) - ` +
-                        `exposed read-only as unknownStates.${rawKey}. Please report this to the adapter developer.`,
+                        `exposed read-only as ${id}. Please report this to the adapter developer.`,
                 );
             }
         }
         const { type, value } = inferUnknownType(status[rawKey]);
         await setDeviceState(
-            `unknownStates.${rawKey}`,
+            id,
             {
                 name: rawKey,
                 type,
