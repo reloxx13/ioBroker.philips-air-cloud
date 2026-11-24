@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "philips-air-cloud",
-    "version": "2.5.1",
+    "version": "2.5.2",
     "news": {
+      "2.5.2": {
+        "en": "New instances default to Philips Cloud.\nFixed a verification button that could keep loading after successful sign-in.",
+        "de": "Neue Instanzen sind Standard Philips Cloud.\nEin Bestätigungsbutton wurde behoben, der auch nach Anmeldung geladen wurde.",
+        "ru": "Новые инстансы по умолчанию используют Philips Cloud.\nИсправлена кнопка подтверждения, которая могла продолжать загружаться после успешного входа в систему.",
+        "pt": "O padrão é o Philips Cloud para novas instâncias.\nFoi corrigido um botão de verificação que carregava após o login.",
+        "nl": "Nieuwe exemplaren worden standaard gebruikt voor Philips Cloud.\nEr is een verificatieknop opgelost die kon blijven laden na een succesvolle aanmelding.",
+        "fr": "Philips Cloud est activé par défaut pour les nouvelles.\nCorrection d'un bouton de vérification qui continuait à se charger en cas de connexion.",
+        "it": "Le nuove istanze sono Philips Cloud.\nRisolto un pulsante di verifica che si caricava dopo l'accesso.",
+        "es": "Las nuevas instancias por defecto son Philips Cloud.\nSe ha corregido un botón de verificación que podía seguir cargándose tras iniciar sesión.",
+        "pl": "Nowe instancje domyślnie dla Philips Cloud.\nNaprawiono przycisk weryfikacji, który mógł nadal ładować się po pomyślnym zalogowaniu.",
+        "uk": "Нові екземпляри за замовчуванням використовують Philips Cloud.\nВиправлена кнопка перевірки, яка може продовжувати завантажуватися після успішного входу.",
+        "zh-cn": "新实例默认为飞利浦云。\n修复了成功登录后可能继续加载的验证按钮。"
+      },
       "2.5.0": {
         "en": "Added experimental Philips Cloud support with login version diagnostics and automatic network recovery",
         "de": "Experimenteller Philips Cloud-Support mit Login-Diagnose und Netzwerkregeneration hinzugefügt",
