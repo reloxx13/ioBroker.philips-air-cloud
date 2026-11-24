@@ -61,7 +61,7 @@ device.
 
 For a local HTTP or CoAP connection:
 Enter the IP address or the hostname of your device. You can find it in your router, where the device often shows up as `MiCO`.
-Most devices are reached over CoAP, which is the default. Some older ones, such as the AC2729 and the AC3829, only answer over HTTP - if the connection does not come up, switch the protocol in the instance settings.
+New instances default to Philips Cloud. For a local connection, select CoAP for most devices or HTTP for older devices such as the AC2729 and AC3829.
 Then pick your device model, so that the adapter creates the controls that match your device. A new instance starts with `Generic`: you get every read-only value, but no controls until you select a model. `Generic` is also the right choice if your model is not in the list.
 It can happen that a device does not report all variables; those stay unfilled in the object tree. Raw values the adapter does not recognise are collected under `unknownStates`.
 

@@ -47,9 +47,9 @@ describe('admin config', () => {
 
 
 describe('cloud Admin configuration contract', () => {
-    it('offers generic Cloud without changing local defaults', () => {
+    it('defaults new instances to Philips Cloud', () => {
         expect(jsonConfig.items.protocol.options.find(option => option.value === 'cloud').label).to.equal('Philips Cloud');
-        expect(ioPackage.native.protocol).to.equal('coap');
+        expect(ioPackage.native.protocol).to.equal('cloud');
         expect(ioPackage.native.model).to.equal('Generic');
         expect(ioPackage.native.cloudCountry).to.equal('');
         expect(jsonConfig.items.cloudCountry.default).to.equal('');

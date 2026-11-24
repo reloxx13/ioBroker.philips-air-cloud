@@ -20,7 +20,7 @@
       ],
       "noTranslation": true,
       "label": "Communication protocol",
-      "default": "coap",
+      "default": "cloud",
       "xs": 12,
       "sm": 12,
       "md": 4,

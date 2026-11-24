@@ -220,7 +220,7 @@
     "host": "",
     "aliveTimeout": 30000,
     "reconnectInterval": 30000,
-    "protocol": "coap",
+    "protocol": "cloud",
     "model": "Generic",
     "logUnknownStatesAsDebug": false,
     "cloudCountry": "",
