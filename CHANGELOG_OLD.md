@@ -1,4 +1,9 @@
 # Older changes
+## 1.6.1 (2026-07-03)
+- (Holly86) Added support for Philips/Versuni CX3550/01 pedestal fan.
+- (Holly86) Added CX fan modes, oscillation, beep and read-only timer state.
+- (Holly86) Timer control is intentionally not exposed because local timer writes can switch the fan off.
+
 ## 1.5.0 (2026-06-24)
 - (tt-tom17) CoAP connection now stays stable instead of disconnecting every few minutes
 - (tt-tom17) Fixed adapter checker warnings

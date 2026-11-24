@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "philips-air-cloud",
-    "version": "2.4.1",
+    "version": "2.5.0",
     "news": {
+      "2.5.0": {
+        "en": "Added experimental Philips Cloud support with login version diagnostics and automatic network recovery",
+        "de": "Experimenteller Philips Cloud-Support mit Login-Diagnose und Netzwerkregeneration hinzugefügt",
+        "ru": "Добавлена экспериментальная поддержка Philips Cloud с диагностикой версии входа и автоматическим восстановлением сети",
+        "pt": "Adicionado suporte experimental ao Philips Cloud com diagnóstico de login e recuperação automática de rede",
+        "nl": "Experimentele Philips Cloud-ondersteuning toegevoegd met diagnose van de inlogversie en automatisch netwerkherstel",
+        "fr": "Ajout du support expérimental Philips Cloud avec diagnostic de connexion et restauration automatique du réseau",
+        "it": "Aggiunto il supporto sperimentale Philips Cloud con diagnosi e ripristino automatico della rete",
+        "es": "Se añadió soporte experimental en la nube de Philips con inicio de sesión, diagnóstico y recuperación automática de red",
+        "pl": "Dodano eksperymentalną obsługę Philips Cloud z diagnostyką wersji logowania i automatycznym odzyskiwaniem sieci",
+        "uk": "Додана експериментальна підтримка Philips Cloud з діагностикою версії входу та автоматичним відновленням мережі",
+        "zh-cn": "增加了实验性的飞利浦云支持，包括登录版本诊断和自动网络恢复"
+      },
       "2.4.1": {
         "en": "AC2889 family: the child lock is now written as a boolean, the format the classic devices expect - an AC4236/14 ignored the command before (GitHub #411)",
         "de": "AC2889-Familie: Die Kindersicherung hat jetzt ein boolesches Format — ein AC4236/14 ignorierte den Befehl zuvor (GitHub #411)",
@@ -80,19 +93,6 @@
         "pl": "Nowe ustawienie \"Model urządzenia\", ponieważ modele używają różnych stanów.\nWażne: identyfikatory stanów zaczynające się od \"cx\" zostały zmienione (na przykład fanMode zamiast cxFanMode). Wybierz raz model urządzenia w ustawieniach.\nPoprawka protokołu HTTP; błąd od wersji 1.4.0.",
         "uk": "Нове налаштування \"Модель пристрою\", оскільки моделі використовують різні стани.\nВажливо: ідентифікатори станів, що починаються з \"cx\", перейменовано (наприклад, fanMode замість cxFanMode). Виберіть модель пристрою один раз у налаштуваннях.\nВиправлено протокол HTTP; помилка з версії 1.4.0.",
         "zh-cn": "新增“设备型号”设置，因为不同型号使用不同的状态。\n重要提示：以“cx”开头的状态 ID 已重命名（例如 fanMode 代替 cxFanMode）。请在设置中选择一次设备型号。\n修复 HTTP 协议；该问题自 1.4.0 起存在。"
-      },
-      "1.6.1": {
-        "en": "Added support for Philips/Versuni CX3550/01 pedestal fan.\nAdded CX fan modes, oscillation, beep and read-only timer state.\nTimer control is intentionally not exposed because local timer writes can switch the fan off.",
-        "de": "Unterstützung für den Philips/Versuni CX3550/01 Standventilator hinzugefügt.\nCX-Lüftermodi, Oszillation, Signalton und schreibgeschützter Timer-Status hinzugefügt.\nDie Timersteuerung wird absichtlich nicht offengelegt, da lokale Timer-Schreibvorgänge den Lüfter ausschalten können.",
-        "ru": "Добавлена поддержка напольных вентиляторов Philips/Versuni CX3550/01.\nДобавлены режимы работы вентилятора CX, функция вращения, звуковой сигнал и состояние таймера только для чтения.\nУправление таймером намеренно недоступно, поскольку локальная запись в таймер может привести к выключению вентилятора.",
-        "pt": "Adicionado suporte para a ventoinha de pedestal Philips/Versuni CX3550/01.\nAdicionados modos de ventoinha CX, oscilação, sinal sonoro e estado do temporizador somente leitura.\nO controle do temporizador não é exposto intencionalmente porque as escritas no temporizador local podem desligar o ventilador.",
-        "nl": "Ondersteuning toegevoegd voor de Philips/Versuni CX3550/01 staande ventilator.\nCX-ventilatorstanden, oscillatie, pieptoon en alleen-lezen timerstatus toegevoegd.\nDe timerbesturing is opzettelijk niet beschikbaar, omdat lokale schrijfbewerkingen op de timer de ventilator kunnen uitschakelen.",
-        "fr": "Ajout de la prise en charge du ventilateur sur pied Philips/Versuni CX3550/01.\nAjout de modes de ventilation CX, oscillation, bip sonore et état de la minuterie en lecture seule.\nLa commande du minuteur n'est volontairement pas exposée car les écritures du minuteur local peuvent désactiver le ventilateur.",
-        "it": "Aggiunto il supporto per il ventilatore a piantana Philips/Versuni CX3550/01.\nAggiunte le modalità di funzionamento della ventola CX, l'oscillazione, il segnale acustico e lo stato del timer in sola lettura.\nIl controllo del timer non è intenzionalmente esposto perché le scritture locali del timer possono spegnere la ventola.",
-        "es": "Se ha añadido compatibilidad con el ventilador de pedestal Philips/Versuni CX3550/01.\nSe han añadido modos de ventilador CX, oscilación, pitido y estado de temporizador de solo lectura.\nEl control del temporizador no se expone intencionadamente porque las escrituras locales del temporizador pueden apagar el ventilador.",
-        "pl": "Dodano obsługę wentylatora kolumnowego Philips/Versuni CX3550/01.\nDodano tryby wentylatora CX, oscylację, sygnał dźwiękowy i stan timera tylko do odczytu.\nSterowanie czasowe celowo nie jest ujawniane, ponieważ zapisy lokalnego czasomierza mogą wyłączyć wentylator.",
-        "uk": "Додано підтримку вентилятора на підставці Philips/Versuni CX3550/01.\nДодано режими вентилятора CX, коливання, звуковий сигнал та стан таймера лише для читання.\nКерування таймером навмисно не розголошується, оскільки записи локального таймера можуть вимкнути вентилятор.",
-        "zh-cn": "新增对飞利浦/Versuni CX3550/01落地扇的支持。\n新增 CX 风扇模式、摆动、蜂鸣和只读定时器状态。\n定时器控制功能故意不对外公开，因为本地定时器写入操作可能会导致风扇关闭。"
       }
     },
     "titleLang": {

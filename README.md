@@ -117,8 +117,7 @@ therefore exposes its timer values read-only. CX7550 timer control is supported.
 Further setup instructions and technical references: [Documentation](docs/README.md).
 
 ## Changelog
-
-### **WORK IN PROGRESS**
+### 2.5.0 (2026-11-24)
 - (reloxx13) Added experimental Philips Cloud support with login version diagnostics and automatic network recovery
 
 ### 2.4.1 (2026-11-17)
@@ -164,11 +163,6 @@ Further setup instructions and technical references: [Documentation](docs/README
 - (tt-tom17) Fixed switches that did nothing when a script or visualisation wrote them as the text "true"/"false" instead of a real on/off value
 - (tt-tom17) Fixed devices connected via HTTP logging "Cannot parse: undefined" every time a command was sent; the device answer is now read correctly
 - (tt-tom17) Fixed devices using the HTTP protocol (for example the AC3829 and AC2729) that stopped connecting in version 1.4.0 and only logged "fetch failed (UND_ERR_SOCKET)"; requests are sent the way these devices expect again
-
-### 1.6.1 (2026-07-03)
-- (Holly86) Added support for Philips/Versuni CX3550/01 pedestal fan.
-- (Holly86) Added CX fan modes, oscillation, beep and read-only timer state.
-- (Holly86) Timer control is intentionally not exposed because local timer writes can switch the fan off.
 
 [Older changelogs can be found there](CHANGELOG_OLD.md)
 
