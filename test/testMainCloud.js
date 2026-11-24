@@ -367,13 +367,16 @@ describe('main - cloud integration preserves local contracts', () => {
         const h = harness({ protocol: 'coap', host: 'synthetic.invalid', model: 'CX3550' });
         h.objects.set('device.started', { type: 'state', common: { name: 'My timestamp', role: 'value.time' } });
         h.objects.set('status.fanSpeedReported', { type: 'state', common: { role: 'value.speed' } });
+        h.objects.set('control.mode', { type: 'state', common: { role: 'level.mode' } });
         await h.callbacks.ready();
-        h.transport().emit('status', { uptime: 1000, fanSpeedReported: 'speed1', D99999: 2, 'a.b': 3 },
-            new Set(['uptime', 'fanSpeedReported']));
+        h.transport().emit('status', { uptime: 1000, fanSpeedReported: 'speed1', mode: 'speed1', D99999: 2, 'a.b': 3 },
+            new Set(['uptime', 'fanSpeedReported', 'mode']));
         await new Promise(resolve => setImmediate(resolve));
         assert.equal(h.objects.get('device.started').common.role, 'date');
         assert.equal(h.objects.get('device.started').common.name, 'My timestamp');
         assert.equal(h.objects.get('status.fanSpeedReported').common.role, 'text');
+        assert.equal(h.objects.get('control.mode').common.role, 'text');
+        assert.ok(h.writes.some(w => w.id === 'control.mode' && w.val === 'speed1' && w.ack === true));
         assert.ok(h.writes.some(w => w.id === 'unknownStates.D99999' && w.val === 2));
         assert.ok(h.writes.some(w => /^unknownStates\._hash_[a-f0-9]{64}$/.test(w.id) && w.val === 3));
     });

@@ -152,7 +152,7 @@ describe('mapping - CX3550', () => {
         expect(mapping.D03102).to.include({ control: true, rawType: 'number' });
         expect(mapping.D03102.options).to.deep.equal({ 1: true, 0: false });
 
-        expect(mapping.D0310C).to.include({ control: true, rawType: 'number', role: 'level.mode' });
+        expect(mapping.D0310C).to.include({ control: true, rawType: 'number', role: 'text' });
         expect(mapping.D0310C.options).to.deep.equal({
             1: 'speed1',
             2: 'speed2',

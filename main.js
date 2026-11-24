@@ -136,6 +136,9 @@ function startAdapter(options) {
 // own infrastructure). Ids already ensured this run are cached so we touch the object DB only once.
 const ensuredObjects = new Set();
 const legacyDeviceRoles = new Map([
+    ['control.mode', 'level.mode'],
+    ['control.timerCode', 'level.mode'],
+    ['control.persistentDisplay', 'level.mode'],
     ['device.started', 'value.time'],
     ['status.fanSpeedReported', 'value.speed'],
 ]);
