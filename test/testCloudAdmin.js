@@ -132,7 +132,10 @@ describe('cloud Admin account boundary', () => {
         const { admin, replies } = fixture();
         const calls = [];
         admin.account.requestOtp = async (...args) => { calls.push(args); };
-        admin.account.completeOtp = async (...args) => { calls.push(args); };
+        admin.account.completeOtp = async (code, owner, onSaved) => {
+            calls.push([code, owner]);
+            onSaved?.();
+        };
         await admin.onMessage(message('cloudRequestCode', { email: 'synthetic@example.test', owner: 'forged' }));
         await admin.onMessage(message('cloudConfirmCode', { code: '123456' }));
         assert.deepEqual(calls, [['synthetic@example.test', 'system.adapter.admin.0:system.user.admin'],
@@ -205,6 +208,25 @@ describe('cloud Admin account boundary', () => {
         assert.equal(admin.account.destroyed, true);
         await assert.rejects(admin.account.saveTokens({ accessToken: 'a', refreshToken: 'r', idToken: 'i', expiresAt: 999 }), /stopped/);
         assert.equal(updates.length, 0);
+    });
+
+    it('replies once after saving a login even if the native write starts unload', async () => {
+        const { admin, adapter, replies, rotations } = fixture();
+        let stopping;
+        adapter.updateConfig = async () => {
+            stopping = admin.destroy();
+            assert.equal(replies.length, 0);
+        };
+        admin.account.fetch = async () => new Response(JSON.stringify({
+            access_token: 'a', refresh_token: 'r', id_token: 'i', expires_in: 3600,
+        }));
+        admin.account.completeOtp = async (_code, _owner, onSaved) =>
+            admin.account.exchange({ grant_type: 'authorization_code' }, 'synthetic@example.test', undefined, onSaved);
+
+        await admin.onMessage(message('cloudConfirmCode', { code: '123456' }));
+        await stopping;
+        assert.equal(rotations.length, 1);
+        assert.deepEqual(replies.map(reply => reply.result), [{ result: 'Signed in successfully.', reloadBrowser: true }]);
     });
 
     it('waits for an in-flight rotation to reach storage during unload', async () => {
