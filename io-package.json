@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "philips-air-cloud",
-    "version": "2.5.3",
+    "version": "2.5.4",
     "news": {
+      "2.5.4": {
+        "en": "Corrected the roles for string-valued control options.",
+        "de": "Die Rollen für Zeichenkettensteuerungen wurden korrigiert.",
+        "ru": "Исправлены роли опций управления со строковым значением.",
+        "pt": "Corrigiu as funções das opções de controle por string.",
+        "nl": "De rollen voor controleopties met een tekenreeks gecorrigeerd.",
+        "fr": "Les rôles des options de contrôle à valeur de chaîne ont été corrigés.",
+        "it": "Corretti i ruoli per i controlli con valori stringa.",
+        "es": "Ha corregido las funciones de las opciones de control por cadena.",
+        "pl": "Poprawiono role dla opcji sterowania o wartości ciągu.",
+        "uk": "Виправлено ролі для параметрів керування рядковими значеннями.",
+        "zh-cn": "更正了字符串值控制选项的角色。"
+      },
       "2.5.3": {
         "en": "Corrected the Cloud device folder and roles for the device start time and reported fan speed.\nEncoded unexpected local device attributes as single state ID segments.",
         "de": "Cloud-Geräteordner und Rollen für Startzeit und Lüfterzahl korrigiert.\nKodierte unerwartete lokale Geräteattribute als Status-ID-Segmente.",
