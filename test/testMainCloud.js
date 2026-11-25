@@ -256,6 +256,9 @@ describe('main - cloud integration preserves local contracts', () => {
         const h = harness({ protocol: 'cloud', cloudRefreshToken: 'synthetic-refresh', devices: [
             { id: 'first', ctn: 'AC0651' }, { id: 'second', ctn: 'AC1715/11' },
         ] });
+        h.objects.set('devices.first.info.connection', {
+            type: 'state', common: { name: 'My connection', role: 'indicator.connected' },
+        });
         await h.callbacks.ready();
         assert.equal(h.transports.length, 2);
         const [first, second] = h.transports;
@@ -265,6 +268,9 @@ describe('main - cloud integration preserves local contracts', () => {
         second.emit('connected', true);
         await new Promise(resolve => setImmediate(resolve));
         assert.equal(h.objects.get('devices.first').type, 'device');
+        assert.equal(h.objects.get('devices.first.info.connection').common.role, 'indicator.reachable');
+        assert.equal(h.objects.get('devices.first.info.connection').common.name, 'My connection');
+        assert.equal(h.objects.get('devices.second.info.connection').common.role, 'indicator.reachable');
         assert.ok(h.objects.get('devices.first.control.mode').common.states.gentle);
         assert.ok(h.objects.get('devices.second.control.mode').common.states.speed2);
         h.callbacks.stateChange('philips-air-cloud.0.devices.second.control.mode', { val: 'sleep', ack: false });
@@ -380,6 +386,24 @@ describe('main - cloud integration preserves local contracts', () => {
         assert.ok(h.writes.some(w => w.id === 'unknownStates.D99999' && w.val === 2));
         assert.ok(h.writes.some(w => /^unknownStates\._hash_[a-f0-9]{64}$/.test(w.id) && w.val === 3));
     });
+
+    for (const [model, control, value, oldRole] of [
+        ['AC2889', 'fanSpeed', 'turbo', 'level.speed'],
+        ['AC3221', 'displayBrightness', 'low', 'level.dimmer'],
+    ]) {
+        it(`updates the ${model} ${control} role without changing its string value`, async () => {
+            const h = harness({ protocol: 'coap', host: 'synthetic.invalid', model });
+            const id = `control.${control}`;
+            h.objects.set(id, { type: 'state', common: { name: 'My control', type: 'string', role: oldRole } });
+            await h.callbacks.ready();
+            h.transport().emit('status', { [control]: value }, new Set([control]));
+            await new Promise(resolve => setImmediate(resolve));
+            assert.equal(h.objects.get(id).common.role, 'text');
+            assert.equal(h.objects.get(id).common.type, 'string');
+            assert.equal(h.objects.get(id).common.name, 'My control');
+            assert.ok(h.writes.some(w => w.id === id && w.val === value && w.ack === true));
+        });
+    }
 
     it('waits for login without discovery or reconnect loops', async () => {
         const h = harness({ protocol: 'cloud' });
