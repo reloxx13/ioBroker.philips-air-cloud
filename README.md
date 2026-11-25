@@ -117,7 +117,7 @@ therefore exposes its timer values read-only. CX7550 timer control is supported.
 Further setup instructions and technical references: [Documentation](docs/README.md).
 
 ## Changelog
-### **WORK IN PROGRESS**
+### 2.5.5 (2026-11-25)
 - (reloxx13) Corrected ioBroker roles for device reachability, classic fan speed and AC3221 display brightness.
 
 ### 2.5.4 (2026-11-24)

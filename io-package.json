@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "philips-air-cloud",
-    "version": "2.5.4",
+    "version": "2.5.5",
     "news": {
+      "2.5.5": {
+        "en": "Corrected ioBroker roles for device reachability, classic fan speed and AC3221 display brightness.",
+        "de": "Die ioBroker-Rollen für Geräteerreichbarkeit, Lüfterdrehzahl und AC3221 wurden korrigiert.",
+        "ru": "Исправлены роли IOBroker в отношении доступности устройства, классической скорости вращения вентилятора и яркости дисплея AC3221.",
+        "pt": "Correção das funções do IOBroker para alcance, ventilador clássico e brilho da tela AC3221.",
+        "nl": "Gecorrigeerde IOBroker-rollen voor de bereikbaarheid van het apparaat, de klassieke ventilatorsnelheid en de helderheid van het AC3221-scherm.",
+        "fr": "Les rôles d'IOBroker ont été corrigés pour la joignabilité, la vitesse du ventilateur et la luminosité de l'AC3221.",
+        "it": "Ruoli IOBroker corretti per accessibilità, ventola classica e luminosità del display AC3221.",
+        "es": "Se corrigieron las funciones de ioBroker en cuanto al alcance del dispositivo, la velocidad clásica del ventilador y el AC3221.",
+        "pl": "Poprawiono role ioBroker pod kątem dostępności urządzenia, klasycznej prędkości wentylatora i jasności wyświetlacza AC3221.",
+        "uk": "Виправлені ролі IObroker для досяжності пристрою, класичної швидкості вентилятора та яскравості дисплея AC3221.",
+        "zh-cn": "更正了 IOBroker 在设备可访问性、经典风扇速度和 AC3221 显示屏亮度方面的角色。"
+      },
       "2.5.4": {
         "en": "Corrected the roles for string-valued control options.",
         "de": "Die Rollen für Zeichenkettensteuerungen wurden korrigiert.",
