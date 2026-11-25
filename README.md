@@ -141,6 +141,10 @@ Further setup instructions and technical references: [Documentation](docs/README
 
 [Older releases and upstream history](CHANGELOG_OLD.md)
 
+## Credits
+
+Thanks to [GermanBluefox](https://github.com/GermanBluefox) for the original adapter, and to [tt-tom17](https://github.com/tt-tom17), [ioBroker Community Adapters](https://github.com/iobroker-community-adapters), and the [upstream contributors](https://github.com/iobroker-community-adapters/ioBroker.philips-air/graphs/contributors) for maintaining and improving the code this fork builds on.
+
 ## License
 MIT License
 
