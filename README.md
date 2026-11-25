@@ -115,7 +115,7 @@ therefore exposes its timer values read-only. CX7550 timer control is supported.
 Further setup instructions and technical references: [Documentation](docs/README.md).
 
 ## Changelog
-### **WORK IN PROGRESS**
+### 2.5.6 (2026-11-25)
 - (reloxx13) Clarified Philips Air+ setup and capabilities in the README and credited upstream contributors.
 - (dependabot) Updated the transitive development dependency fast-uri to 3.1.9.
 

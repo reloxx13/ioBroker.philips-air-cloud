@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "philips-air-cloud",
-    "version": "2.5.5",
+    "version": "2.5.6",
     "news": {
+      "2.5.6": {
+        "en": "Clarified Philips Air+ setup and capabilities in the README and credited upstream contributors.\nUpdated the transitive development dependency fast-uri to 3.1.9.",
+        "de": "Aufbau und Funktionen von Philips Air+ in der README geklärt und Upstream-Mitwirkende genannt.\nFast-URI für transitive Entwicklungsabhängigkeiten auf 3.1.9 aktualisiert.",
+        "ru": "Уточнил настройку и возможности Philips Air+ в README и поблагодарил разработчиков, участвовавших в разработке.\nОбновлена переходная зависимость разработки fast-uri до 3.1.9.",
+        "pt": "Esclareceu a configuração e os recursos do Philips Air+ no README e creditou colaboradores.\nAtualizou a dependência transitiva fast-uri para 3.1.9.",
+        "nl": "Duidelijke configuratie en mogelijkheden van Philips Air+ in de README en gecrediteerde upstream-bijdragers.\nDe transitieve ontwikkelingsafhankelijkheid fast-uri is bijgewerkt naar 3.1.9.",
+        "fr": "La configuration et les fonctions de Philips Air+ ont été précisées dans le README et les contributeurs ont été crédités.\nFast-uri, une dépendance au développement transitif, a été mise à jour en 3.1.9.",
+        "it": "Configurazione e funzionalità di Philips Air+ chiarite nel README e autori upstream accreditati.\nAggiornato la dipendenza transitiva fast-uri a 3.1.9.",
+        "es": "Aclaró la configuración y las funciones del Philips Air+ en el README y dio crédito a los colaboradores.\nActualizó la dependencia de desarrollo transitivo fast-uri a 3.1.9.",
+        "pl": "Wyjaśniono konfigurację i możliwości programu Philips Air+ w programie README oraz przypisano współpracownikom poprzednim.\nZaktualizowano fast-uri zależności od rozwoju przechodniego do wersji 3.1.9.",
+        "uk": "Уточнено налаштування та можливості Philips Air+ у README та зараховані вхідні учасники.\nОновлено перехідну залежність розробки fast-uri до 3.1.9.",
+        "zh-cn": "在自述文件中阐明了飞利浦 Air+ 的设置和功能，并赞扬了上游贡献者。\n将可传递的开发依赖项 fast-uri 更新为 3.1.9。"
+      },
       "2.5.5": {
         "en": "Corrected ioBroker roles for device reachability, classic fan speed and AC3221 display brightness.",
         "de": "Die ioBroker-Rollen für Geräteerreichbarkeit, Lüfterdrehzahl und AC3221 wurden korrigiert.",
