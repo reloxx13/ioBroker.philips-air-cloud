@@ -3,13 +3,9 @@
 
 [![Test and Release](https://github.com/reloxx13/ioBroker.philips-air-cloud/actions/workflows/test-and-release.yml/badge.svg)](https://github.com/reloxx13/ioBroker.philips-air-cloud/actions/workflows/test-and-release.yml)
 
-Fork of [ioBroker.philips-air](https://github.com/iobroker-community-adapters/ioBroker.philips-air).
+This fork of [ioBroker.philips-air](https://github.com/iobroker-community-adapters/ioBroker.philips-air) adds experimental **Philips Air+ cloud support**. Sign in with an email verification code and one ioBroker instance discovers the devices on your account. Each supported device gets its own status, connection indicator, and available controls. The adapter renews access tokens automatically.
 
-This fork uses the adapter ID `philips-air-cloud`. Its instances use their own namespace, for example `philips-air-cloud.0`. Existing `philips-air` instances and their settings are separate.
-
-Connects Philips air purifiers and selected Philips/Versuni fans with ioBroker.
-**Tested with AC2729 and the Philips/Versuni fans CX3550/01 and CX7550/01**, but should work with newer purifiers that communicate via local CoAP with encryption.
-<img src="img/device.png" alt="Philips AC2729 air purifier" width="180">
+Local HTTP and encrypted CoAP connections are also available for compatible devices.
 
 [Link to philips website](https://www.philips.de/c-m-ho/luftreiniger-und-luftbefeuchter/kombi)
 
@@ -21,6 +17,8 @@ Confirmed on real hardware: AC2729, AC2889, AC3221, AC3829, AC4236/14,
 CX3550/01 and CX7550/01. See [model selection](#which-device-model-should-i-select)
 for the matching configuration. Other classic purifiers can use the shared
 `AC2889` mapping; unlisted local devices start with read-only `Generic`.
+
+<img src="img/device.png" alt="Philips AC2729 air purifier" width="180">
 
 ### Philips Cloud (Air+ account)
 
