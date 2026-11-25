@@ -4,7 +4,8 @@
   "description": "Connects Philips air purifier with ioBroker",
   "author": "bdeluefox <dogafox@gmail.com>",
   "contributors": [
-    "iobroker-community-adapters <iobroker-community-adapters@gmx.de>"
+    "iobroker-community-adapters <iobroker-community-adapters@gmx.de>",
+    "tt-tom17 (https://github.com/tt-tom17)"
   ],
   "homepage": "https://github.com/reloxx13/ioBroker.philips-air-cloud",
   "license": "MIT",
